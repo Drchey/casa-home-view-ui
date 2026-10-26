@@ -1,0 +1,90 @@
+.results {
+    display: grid;
+    column-gap: 14px;
+    row-gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+    margin-top: 50px;
+    justify-content: space-around;
+}
+
+/* Ensure the button is block-level/inline-block and visible */
+#primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Sizing & Spacing */
+    padding: 0.75rem 1.5rem;
+    min-width: 100px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    /* Colors (High Visibility Blue) */
+    background-color: #0066cc;
+    color: #ffffff;
+
+    /* Borders & Shape */
+    border: 1px solid #0055bb;
+    border-radius: 6px;
+
+    /* Smooth Transitions */
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+/* Hover state */
+#primary:hover {
+    background-color: #0052a3;
+    border-color: #004488;
+}
+
+/* Clicked/Active state */
+#primary:active {
+    transform: scale(0.98);
+}
+
+/* Accessibility Focus Ring (Keyboard Navigation) */
+button.primary:focus-visible {
+    outline: 3px solid #80bdff;
+    outline-offset: 2px;
+}
+
+/* Fallback: Ensure parent container isn't accidentally clipping it */
+button.primary {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+
+input[type="text"] {
+    border: solid 1px var(--primary-color);
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 4px;
+    display: inline-block;
+    width: 30%;
+}
+
+button {
+    padding: 10px;
+    border: solid 1px var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+    .results {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    input[type="text"] {
+        width: 70%;
+    }
+}
+
+@media (max-width: 499px) {
+    .results {
+        grid-template-columns: 1fr;
+    }
+}

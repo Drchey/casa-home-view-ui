@@ -1,0 +1,80 @@
+/* Base Layout */
+main {
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    margin: 0;
+    padding: 0;
+}
+
+/* Full Width Link Wrap */
+a {
+    text-decoration: none;
+    display: block;
+    /* Forces the link container to take full width */
+    width: 100%;
+}
+
+/* Full Width Header */
+.brand-name {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    /* Spans across the entire viewport */
+    box-sizing: border-box;
+    padding: 1.25rem 2rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid #0066cc;
+    /* Underline visible link bar */
+    transition: background-color 0.2s ease;
+}
+
+/* Visual Link Indicators on Hover */
+a:hover .brand-name {
+    background-color: #f0f7ff;
+    /* Highlight background on hover */
+}
+
+a:hover .brand-name::after {
+    text-decoration: underline;
+}
+
+a:focus-visible .brand-name {
+    outline: 3px solid #80bdff;
+    outline-offset: -3px;
+}
+
+/* Text link indicator next to logo */
+.brand-name::after {
+    content: "Home";
+    font-size: 1rem;
+    color: #0066cc;
+    font-weight: 500;
+}
+
+.brand-logo {
+    height: 35px;
+    width: auto;
+    display: block;
+}
+
+/* Content Container below the header */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .brand-name {
+        padding: 1rem;
+    }
+
+    .content {
+        padding: 1rem;
+    }
+}
